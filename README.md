@@ -1,2 +1,2 @@
 # BoonkGangBot
-Fuck You!
+Prefix ( > )

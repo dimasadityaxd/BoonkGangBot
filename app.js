@@ -1,9 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const request = require("request");
+const fs = require("fs");
+const tools = require('./functions.js');
+const opusscript = require("opusscript");
 const settings = require('./settings.json');
 
 client.on('ready', () => {
-  console.log('Bot Launched...');
+  console.log(`Logged in as ${client.user.tag}!`);
 
 });
 
@@ -31,8 +35,16 @@ var argresult = args.join(" ");
 	  client.user.setStatus(argresult);
   } else
 
+  	if (message.content.startsWith(prefix + "contact")) {
+   	 message.reply("Whatsapp : +6282153600850, Line : gue2365gue, Business Line : @fqk7622s Use {@}");
+  } else
+
   	if (message.content.startsWith(prefix + "help")) {
-   	 message.channel.send("Commands : `>ping`, `>join`, `>leave`, `>invite`");
+   	 message.channel.send("Commands : `>ping`, `>join`, `>leave`, `>invite`, `>contact`");
+  } else
+
+  	if (message.content.startsWith(prefix + "instagram")) {
+   	 message.reply("Instagram : https://www.instagram.com/dimasadityaxdd (Private Account)");
   } else
 
   	if (message.content.startsWith(prefix + "join")) {
@@ -61,7 +73,7 @@ var argresult = args.join(" ");
 		}
 	}
 
-	if(message.content.startsWith(prefix + "eval")) {
+  if(message.content.startsWith(prefix + "eval")) {
       if(message.author.bot) return;
   if (message.author.id !== "195072060249210881") {
   console.log('Owner only command attemped by: ' + message.author.username + '(' + message.author.id + ')' + ' on ' + message.guild.name + '(' + message.guild.id + ')');
